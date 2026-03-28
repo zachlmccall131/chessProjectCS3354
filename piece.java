@@ -1,94 +1,107 @@
-abstract class piece {
-    String name;
+
+
+public abstract class piece {
+    
+    String pieceName;
     boolean isWhite;
-    int x;
-    int y;
+
     
 
-    void posibleMoves(String name, char x, int y) {
-        // Returns a list of possible moves for the piece based on its type and current position
-    }
 
-    void move(String name,char newX, int newY) {
-        // Moves the piece to the new position
-    }
-
-
-
-
-    public piece(String name,boolean isWhite, char x, int y) {
-        this.name = name;
+    public piece(String pieceName,boolean isWhite) {
+        this.pieceName = pieceName;
         this.isWhite = isWhite;
-        this.x = x;
-        this.y = y;
     }   
+    public void possibleMove(String pieceName){
+    
+    }
 
 
-    public class rook extends piece {
-        public rook(String name, boolean isWhite, char x, int y) {
-            super(name, isWhite, x, y);
+    public static class rook extends piece {
+        public rook(String pieceName, boolean isWhite) {
+            super(pieceName, isWhite);
             if(isWhite) {
-                this.name = "wR";
+                this.pieceName = "wR";
             } else {
-                this.name = "bR";
+                this.pieceName = "bR";
             }
         }
         
         @Override
-        public void posibleMoves(String name, char x, int y) {
+        public void possibleMove(String pieceName){
             // Rooks can move any number of squares along a rank or file, but cannot leap over other pieces.
         }
     }
 
-    public class knight extends piece {
-        public knight(String name, boolean isWhite, char x, int y) {
-            super(name, isWhite, x, y);
+    public static class knight extends piece {
+        public knight(String pieceName, boolean isWhite) {
+            super(pieceName, isWhite);
             if(isWhite) {
-                this.name = "wN";
+                this.pieceName = "wN";
             } else {
-                this.name = "bN";
-            }
-
-        }
-    }
-    public class bishop extends piece {
-        public bishop(String name, boolean isWhite, char x, int y) {
-            super(name, isWhite, x, y);   
-            if(isWhite) {
-                this.name = "wB";
-            } else {
-                this.name = "bB";
+                this.pieceName = "bN";
             }
         }
-    }
-    public class queen extends piece {
-        public queen(String name, boolean isWhite, char x, int y) {
-            super(name, isWhite, x, y);
+         @Override
+        public void possibleMove(String pieceName){
+            // Rooks can move any number of squares along a rank or file, but cannot leap over other pieces.
+        }
+        }
+    
+    public static class bishop extends piece {
+        public bishop(String pieceName, boolean isWhite) {
+            super(pieceName, isWhite);
             if(isWhite) {
-                this.name = "wQ";
+                this.pieceName = "wB";
             } else {
-                this.name = "bQ";
+                this.pieceName = "bB";
             }
         }
-    }
-    public class king extends piece {
-        public king(String name, boolean isWhite, char x, int y) {
-            super(name, isWhite, x, y);
-            if(isWhite) {
-                this.name = "wK";
-            } else {
-                this.name = "bK";
-            }
+         @Override
+        public void possibleMove(String pieceName){
+            // Rooks can move any number of squares along a rank or file, but cannot leap over other pieces.
         }
     }
-    public class pawn extends piece {
-        public pawn(String name, boolean isWhite, char x, int y) {
-            super(name, isWhite, x, y);
+    public static class queen extends piece {
+        public queen(String pieceName, boolean isWhite) {
+            super(pieceName, isWhite);
             if(isWhite) {
-                this.name = "wp";
+                this.pieceName = "wQ";
             } else {
-                this.name = "bp";
+                this.pieceName = "bQ";
             }
+        }
+         @Override
+        public void possibleMove(String pieceName){
+            // Rooks can move any number of squares along a rank or file, but cannot leap over other pieces.
+        }
+    }
+    public static class king extends piece {
+        public king(String pieceName, boolean isWhite) {
+            super(pieceName, isWhite);
+            if(isWhite) {
+                this.pieceName = "wK";
+            } else {
+                this.pieceName = "bK";
+            }
+        }
+         @Override
+        public void possibleMove(String pieceName){
+            // Rooks can move any number of squares along a rank or file, but cannot leap over other pieces.
+        }
+    }
+    public static class pawn extends piece {
+        public pawn(String pieceName, boolean isWhite) {
+            super(pieceName, isWhite);
+            if(isWhite) {
+                this.pieceName = "wp";
+            } else {
+                this.pieceName = "bp";
+            }
+        }
+         @Override
+        public void possibleMove(String pieceName){
+            // Rooks can move any number of squares along a rank or file, but cannot leap over other pieces.
         }
     }
 }
