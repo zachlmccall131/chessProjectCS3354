@@ -2,12 +2,6 @@ public class board {
     tile tiles[] = new tile[64];
 
     public board() {
-        for(int i = 0; i < 64; i++) {
-            tiles[i] = new tile.OpenTile(i);
-        }
-    }
-
-    public void initBoard() {
         tiles[0] = new tile.OccupiedTile(0, new piece.rook("bR", false));
         tiles[1] = new tile.OccupiedTile(1, new piece.knight("bN", false));
         tiles[2] = new tile.OccupiedTile(2, new piece.bishop("bB", false));
@@ -33,9 +27,8 @@ public class board {
         tiles[61] = new tile.OccupiedTile(61, new piece.bishop("wB", true));
         tiles[62] = new tile.OccupiedTile(62, new piece.knight("wN", true));
         tiles[63] = new tile.OccupiedTile(63, new piece.rook("wR", true));
-
-        // Initialize the board with pieces in their starting positions
     }
+
 
 
     void printBoard() {
